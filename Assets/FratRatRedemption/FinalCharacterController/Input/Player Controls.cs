@@ -110,6 +110,33 @@ namespace FratRatRedemption.FinalCharacterController
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ToggleDodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""e708d3f7-985a-4682-adca-2033e666b3da"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""74cdd8a8-1d80-4c2b-a228-dedccc9409fa"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""IdleDodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e2c4db4-2e8f-4e5f-ad91-e0fde43e0eca"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -178,6 +205,115 @@ namespace FratRatRedemption.FinalCharacterController
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c2514a8-c94c-444b-81a6-90f1cda7c77b"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleDodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbe33056-620a-42b5-82be-985e2fbaa0e1"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37be7db2-5176-41af-8c1f-6cf6edfe69c7"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""IdleDodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""ThirdPersonMap"",
+            ""id"": ""2c809a71-6ab3-41ba-80cd-6f61cebc4b21"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""ecd6e954-4975-46e9-8375-6dc85cbaa1a2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b1c4cb67-889a-4e90-8eeb-8971ca565c7c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PlayerActionMap"",
+            ""id"": ""73d4cf37-82b0-4ebc-a5de-3d6cf84c40d4"",
+            ""actions"": [
+                {
+                    ""name"": ""BasicAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""f2f0baba-0e86-4a59-9dfa-86f243b295fc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HeavyAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d2fb87d-6e4c-4eef-a696-7ee38b63542e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""445eb49c-ce70-4df4-9e2b-150daca5f31b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BasicAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3d05ffb-9883-454d-b13a-6a0f6a56f1b6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeavyAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -188,11 +324,23 @@ namespace FratRatRedemption.FinalCharacterController
             m_PlayerLocomotionMap = asset.FindActionMap("PlayerLocomotionMap", throwIfNotFound: true);
             m_PlayerLocomotionMap_Movement = m_PlayerLocomotionMap.FindAction("Movement", throwIfNotFound: true);
             m_PlayerLocomotionMap_Look = m_PlayerLocomotionMap.FindAction("Look", throwIfNotFound: true);
+            m_PlayerLocomotionMap_ToggleDodge = m_PlayerLocomotionMap.FindAction("ToggleDodge", throwIfNotFound: true);
+            m_PlayerLocomotionMap_Dodge = m_PlayerLocomotionMap.FindAction("Dodge", throwIfNotFound: true);
+            m_PlayerLocomotionMap_IdleDodge = m_PlayerLocomotionMap.FindAction("IdleDodge", throwIfNotFound: true);
+            // ThirdPersonMap
+            m_ThirdPersonMap = asset.FindActionMap("ThirdPersonMap", throwIfNotFound: true);
+            m_ThirdPersonMap_Newaction = m_ThirdPersonMap.FindAction("New action", throwIfNotFound: true);
+            // PlayerActionMap
+            m_PlayerActionMap = asset.FindActionMap("PlayerActionMap", throwIfNotFound: true);
+            m_PlayerActionMap_BasicAttack = m_PlayerActionMap.FindAction("BasicAttack", throwIfNotFound: true);
+            m_PlayerActionMap_HeavyAttack = m_PlayerActionMap.FindAction("HeavyAttack", throwIfNotFound: true);
         }
 
         ~@PlayerControls()
         {
             UnityEngine.Debug.Assert(!m_PlayerLocomotionMap.enabled, "This will cause a leak and performance issues, PlayerControls.PlayerLocomotionMap.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_ThirdPersonMap.enabled, "This will cause a leak and performance issues, PlayerControls.ThirdPersonMap.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_PlayerActionMap.enabled, "This will cause a leak and performance issues, PlayerControls.PlayerActionMap.Disable() has not been called.");
         }
 
         /// <summary>
@@ -270,6 +418,9 @@ namespace FratRatRedemption.FinalCharacterController
         private List<IPlayerLocomotionMapActions> m_PlayerLocomotionMapActionsCallbackInterfaces = new List<IPlayerLocomotionMapActions>();
         private readonly InputAction m_PlayerLocomotionMap_Movement;
         private readonly InputAction m_PlayerLocomotionMap_Look;
+        private readonly InputAction m_PlayerLocomotionMap_ToggleDodge;
+        private readonly InputAction m_PlayerLocomotionMap_Dodge;
+        private readonly InputAction m_PlayerLocomotionMap_IdleDodge;
         /// <summary>
         /// Provides access to input actions defined in input action map "PlayerLocomotionMap".
         /// </summary>
@@ -289,6 +440,18 @@ namespace FratRatRedemption.FinalCharacterController
             /// Provides access to the underlying input action "PlayerLocomotionMap/Look".
             /// </summary>
             public InputAction @Look => m_Wrapper.m_PlayerLocomotionMap_Look;
+            /// <summary>
+            /// Provides access to the underlying input action "PlayerLocomotionMap/ToggleDodge".
+            /// </summary>
+            public InputAction @ToggleDodge => m_Wrapper.m_PlayerLocomotionMap_ToggleDodge;
+            /// <summary>
+            /// Provides access to the underlying input action "PlayerLocomotionMap/Dodge".
+            /// </summary>
+            public InputAction @Dodge => m_Wrapper.m_PlayerLocomotionMap_Dodge;
+            /// <summary>
+            /// Provides access to the underlying input action "PlayerLocomotionMap/IdleDodge".
+            /// </summary>
+            public InputAction @IdleDodge => m_Wrapper.m_PlayerLocomotionMap_IdleDodge;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -321,6 +484,15 @@ namespace FratRatRedemption.FinalCharacterController
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @ToggleDodge.started += instance.OnToggleDodge;
+                @ToggleDodge.performed += instance.OnToggleDodge;
+                @ToggleDodge.canceled += instance.OnToggleDodge;
+                @Dodge.started += instance.OnDodge;
+                @Dodge.performed += instance.OnDodge;
+                @Dodge.canceled += instance.OnDodge;
+                @IdleDodge.started += instance.OnIdleDodge;
+                @IdleDodge.performed += instance.OnIdleDodge;
+                @IdleDodge.canceled += instance.OnIdleDodge;
             }
 
             /// <summary>
@@ -338,6 +510,15 @@ namespace FratRatRedemption.FinalCharacterController
                 @Look.started -= instance.OnLook;
                 @Look.performed -= instance.OnLook;
                 @Look.canceled -= instance.OnLook;
+                @ToggleDodge.started -= instance.OnToggleDodge;
+                @ToggleDodge.performed -= instance.OnToggleDodge;
+                @ToggleDodge.canceled -= instance.OnToggleDodge;
+                @Dodge.started -= instance.OnDodge;
+                @Dodge.performed -= instance.OnDodge;
+                @Dodge.canceled -= instance.OnDodge;
+                @IdleDodge.started -= instance.OnIdleDodge;
+                @IdleDodge.performed -= instance.OnIdleDodge;
+                @IdleDodge.canceled -= instance.OnIdleDodge;
             }
 
             /// <summary>
@@ -371,6 +552,209 @@ namespace FratRatRedemption.FinalCharacterController
         /// Provides a new <see cref="PlayerLocomotionMapActions" /> instance referencing this action map.
         /// </summary>
         public PlayerLocomotionMapActions @PlayerLocomotionMap => new PlayerLocomotionMapActions(this);
+
+        // ThirdPersonMap
+        private readonly InputActionMap m_ThirdPersonMap;
+        private List<IThirdPersonMapActions> m_ThirdPersonMapActionsCallbackInterfaces = new List<IThirdPersonMapActions>();
+        private readonly InputAction m_ThirdPersonMap_Newaction;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "ThirdPersonMap".
+        /// </summary>
+        public struct ThirdPersonMapActions
+        {
+            private @PlayerControls m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public ThirdPersonMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "ThirdPersonMap/Newaction".
+            /// </summary>
+            public InputAction @Newaction => m_Wrapper.m_ThirdPersonMap_Newaction;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_ThirdPersonMap; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="ThirdPersonMapActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(ThirdPersonMapActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="ThirdPersonMapActions" />
+            public void AddCallbacks(IThirdPersonMapActions instance)
+            {
+                if (instance == null || m_Wrapper.m_ThirdPersonMapActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_ThirdPersonMapActionsCallbackInterfaces.Add(instance);
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="ThirdPersonMapActions" />
+            private void UnregisterCallbacks(IThirdPersonMapActions instance)
+            {
+                @Newaction.started -= instance.OnNewaction;
+                @Newaction.performed -= instance.OnNewaction;
+                @Newaction.canceled -= instance.OnNewaction;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="ThirdPersonMapActions.UnregisterCallbacks(IThirdPersonMapActions)" />.
+            /// </summary>
+            /// <seealso cref="ThirdPersonMapActions.UnregisterCallbacks(IThirdPersonMapActions)" />
+            public void RemoveCallbacks(IThirdPersonMapActions instance)
+            {
+                if (m_Wrapper.m_ThirdPersonMapActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="ThirdPersonMapActions.AddCallbacks(IThirdPersonMapActions)" />
+            /// <seealso cref="ThirdPersonMapActions.RemoveCallbacks(IThirdPersonMapActions)" />
+            /// <seealso cref="ThirdPersonMapActions.UnregisterCallbacks(IThirdPersonMapActions)" />
+            public void SetCallbacks(IThirdPersonMapActions instance)
+            {
+                foreach (var item in m_Wrapper.m_ThirdPersonMapActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_ThirdPersonMapActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="ThirdPersonMapActions" /> instance referencing this action map.
+        /// </summary>
+        public ThirdPersonMapActions @ThirdPersonMap => new ThirdPersonMapActions(this);
+
+        // PlayerActionMap
+        private readonly InputActionMap m_PlayerActionMap;
+        private List<IPlayerActionMapActions> m_PlayerActionMapActionsCallbackInterfaces = new List<IPlayerActionMapActions>();
+        private readonly InputAction m_PlayerActionMap_BasicAttack;
+        private readonly InputAction m_PlayerActionMap_HeavyAttack;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "PlayerActionMap".
+        /// </summary>
+        public struct PlayerActionMapActions
+        {
+            private @PlayerControls m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public PlayerActionMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "PlayerActionMap/BasicAttack".
+            /// </summary>
+            public InputAction @BasicAttack => m_Wrapper.m_PlayerActionMap_BasicAttack;
+            /// <summary>
+            /// Provides access to the underlying input action "PlayerActionMap/HeavyAttack".
+            /// </summary>
+            public InputAction @HeavyAttack => m_Wrapper.m_PlayerActionMap_HeavyAttack;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_PlayerActionMap; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="PlayerActionMapActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(PlayerActionMapActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="PlayerActionMapActions" />
+            public void AddCallbacks(IPlayerActionMapActions instance)
+            {
+                if (instance == null || m_Wrapper.m_PlayerActionMapActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_PlayerActionMapActionsCallbackInterfaces.Add(instance);
+                @BasicAttack.started += instance.OnBasicAttack;
+                @BasicAttack.performed += instance.OnBasicAttack;
+                @BasicAttack.canceled += instance.OnBasicAttack;
+                @HeavyAttack.started += instance.OnHeavyAttack;
+                @HeavyAttack.performed += instance.OnHeavyAttack;
+                @HeavyAttack.canceled += instance.OnHeavyAttack;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="PlayerActionMapActions" />
+            private void UnregisterCallbacks(IPlayerActionMapActions instance)
+            {
+                @BasicAttack.started -= instance.OnBasicAttack;
+                @BasicAttack.performed -= instance.OnBasicAttack;
+                @BasicAttack.canceled -= instance.OnBasicAttack;
+                @HeavyAttack.started -= instance.OnHeavyAttack;
+                @HeavyAttack.performed -= instance.OnHeavyAttack;
+                @HeavyAttack.canceled -= instance.OnHeavyAttack;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PlayerActionMapActions.UnregisterCallbacks(IPlayerActionMapActions)" />.
+            /// </summary>
+            /// <seealso cref="PlayerActionMapActions.UnregisterCallbacks(IPlayerActionMapActions)" />
+            public void RemoveCallbacks(IPlayerActionMapActions instance)
+            {
+                if (m_Wrapper.m_PlayerActionMapActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="PlayerActionMapActions.AddCallbacks(IPlayerActionMapActions)" />
+            /// <seealso cref="PlayerActionMapActions.RemoveCallbacks(IPlayerActionMapActions)" />
+            /// <seealso cref="PlayerActionMapActions.UnregisterCallbacks(IPlayerActionMapActions)" />
+            public void SetCallbacks(IPlayerActionMapActions instance)
+            {
+                foreach (var item in m_Wrapper.m_PlayerActionMapActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_PlayerActionMapActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="PlayerActionMapActions" /> instance referencing this action map.
+        /// </summary>
+        public PlayerActionMapActions @PlayerActionMap => new PlayerActionMapActions(this);
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PlayerLocomotionMap" which allows adding and removing callbacks.
         /// </summary>
@@ -392,6 +776,64 @@ namespace FratRatRedemption.FinalCharacterController
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnLook(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ToggleDodge" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnToggleDodge(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Dodge" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnDodge(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "IdleDodge" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnIdleDodge(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "ThirdPersonMap" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="ThirdPersonMapActions.AddCallbacks(IThirdPersonMapActions)" />
+        /// <seealso cref="ThirdPersonMapActions.RemoveCallbacks(IThirdPersonMapActions)" />
+        public interface IThirdPersonMapActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnNewaction(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PlayerActionMap" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="PlayerActionMapActions.AddCallbacks(IPlayerActionMapActions)" />
+        /// <seealso cref="PlayerActionMapActions.RemoveCallbacks(IPlayerActionMapActions)" />
+        public interface IPlayerActionMapActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "BasicAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnBasicAttack(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "HeavyAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnHeavyAttack(InputAction.CallbackContext context);
         }
     }
 }
