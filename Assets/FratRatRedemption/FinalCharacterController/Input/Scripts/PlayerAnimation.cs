@@ -28,11 +28,6 @@ namespace FratRatRedemption.FinalCharacterController
 
         private void Update()
         {
-            UpdateAnimationState();
-        }
-
-        private void UpdateAnimationState()
-        {
             bool isSprinting = _playerState.CurrentPlayerMovementState == PlayerMovementState.Sprinting;
 
             Vector2 inputTarget = isSprinting ? _playerLocomotionInput.MovementInput * 1.5f : _playerLocomotionInput.MovementInput;

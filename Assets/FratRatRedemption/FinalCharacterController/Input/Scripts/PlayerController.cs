@@ -12,6 +12,9 @@ namespace GinjaGaming.FinalCharacterController
         [Header("Components")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
+        AudioSource audioSource;
+        
+        ParticleSystem footstepFx;
 
         [Header("Base Movement")]
         public float runAcceleration = 50f;
@@ -23,14 +26,20 @@ namespace GinjaGaming.FinalCharacterController
         public float lookSenseV = 0.1f;
         public float lookLimitV = 89f;
 
+        [Header("Audio Settings")]
+        public AudioClip[] footsteps;
+
         private PlayerLocomotionInput _playerLocomotionInput;
         private Vector2 _cameraRotation = Vector2.zero;
         private Vector2 _playerTargetRotation = Vector2.zero;
 
         private void Awake()
-        {
+        {   
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
-        }
+            audioSource = GetComponent<AudioSource>();
+            footstepFx = GetComponent<ParticleSystem>();
+        }   
+        
         private void Update()
         {
             Vector3 cameraForwardXZ = new Vector3(_playerCamera.transform.forward.x, 0f, _playerCamera.transform.forward.z).normalized;
@@ -58,6 +67,13 @@ namespace GinjaGaming.FinalCharacterController
             transform.rotation = Quaternion.Euler(0f, _playerTargetRotation.x, 0f);
 
             _playerCamera.transform.rotation = Quaternion.Euler(_cameraRotation.y, _cameraRotation.x, 0f);
+        }
+
+        public void Footstep()
+        {
+            int random = Random.Range(0, footsteps.Length);
+            var clip = footsteps[random];
+            audioSource.PlayOneShot(clip);
         }
     }
 }
