@@ -38289,6 +38289,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+
   - time: 0.23333333
     functionName: Footstep
     data: 
@@ -38298,6 +38299,10 @@ AnimationClip:
     messageOptions: 0
   - time: 0.56666666
     functionName: Footstep
+
+  - time: 0.6
+    functionName: OpenComboWindow
+
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
