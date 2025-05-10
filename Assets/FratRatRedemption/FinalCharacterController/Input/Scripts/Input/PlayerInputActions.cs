@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 namespace FratRatRedemption.FinalCharacterController
 {
-    [DefaultExecutionOrder(-2)]
+    [DefaultExecutionOrder(-3)]
     public class PlayerInputActions : MonoBehaviour, PlayerControls.IPlayerActionMapActions
     {
         #region classVariables
@@ -18,12 +18,9 @@ namespace FratRatRedemption.FinalCharacterController
 
         private void OnEnable()
         {
-            //PlayerControls = new PlayerControls();
-            //PlayerInputManager.Instance.Enable();
-
- 
-
-
+            // PlayerControls = new PlayerControls();
+            // PlayerInputManager.Instance.Enable();
+             
             if (PlayerInputManager.Instance?.PlayerControls == null)
             {
                 Debug.LogError("Player controls is not initialized - cannot enable");
@@ -32,7 +29,6 @@ namespace FratRatRedemption.FinalCharacterController
 
             PlayerInputManager.Instance.PlayerControls.PlayerActionMap.Enable();
             PlayerInputManager.Instance.PlayerControls.PlayerActionMap.SetCallbacks(this);
-
         }
 
         private void OnDisable()
@@ -61,6 +57,16 @@ namespace FratRatRedemption.FinalCharacterController
                 return;
 
             HeavyAttackPressed = true;
+        }
+
+        public void ResetHeavyAttackPressed()
+        {
+            HeavyAttackPressed = false;
+        }
+
+        public void ResetBasicAttackPressed()
+        {
+            BasicAttackPressed = false;
         }
     }
 }
