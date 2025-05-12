@@ -13,9 +13,6 @@ namespace FratRatRedemption.FinalCharacterController
         [Header("Components")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
-        AudioSource audioSource;
-        
-        ParticleSystem footstepFx;
 
         [Header("Base Movement")]
         public float runAcceleration = 35f;
@@ -56,9 +53,6 @@ namespace FratRatRedemption.FinalCharacterController
         public float lookSenseV = 0.1f;
         public float lookLimitV = 89f;
 
-        [Header("Audio Settings")]
-        public AudioClip[] footsteps;
-
         private PlayerLocomotionInput _playerLocomotionInput;
         private PlayerState _playerState;
 
@@ -68,16 +62,13 @@ namespace FratRatRedemption.FinalCharacterController
 
         #region Startup
         private void Awake()
-        {   
+        {
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
             _playerState = GetComponent<PlayerState>();
-            audioSource = GetComponent<AudioSource>();
-            footstepFx = GetComponent<ParticleSystem>();
-        }   
+        }
         #endregion
 
         #region Update Logic
-
         private void Update()
         {
             UpdateMovementState();
@@ -262,14 +253,6 @@ namespace FratRatRedemption.FinalCharacterController
 
             _playerCamera.transform.rotation = Quaternion.Euler(_cameraRotation.y, _cameraRotation.x, 0f);
         }
-
-
-        public void Footstep()
-        {
-            int random = Random.Range(0, footsteps.Length);
-            var clip = footsteps[random];
-            audioSource.PlayOneShot(clip);
-        }
         #endregion
 
         #region State Checks
@@ -280,6 +263,5 @@ namespace FratRatRedemption.FinalCharacterController
             return lateralVelocity.magnitude > movingThreshold;
         }
         #endregion
-
     }
 }
