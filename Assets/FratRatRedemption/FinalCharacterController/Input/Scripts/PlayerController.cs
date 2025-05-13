@@ -13,6 +13,7 @@ namespace FratRatRedemption.FinalCharacterController
         [Header("Components")]
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private Camera _playerCamera;
+        AudioSource audioSource;
 
         [Header("Base Movement")]
         public float runAcceleration = 35f;
@@ -53,6 +54,10 @@ namespace FratRatRedemption.FinalCharacterController
         public float lookSenseV = 0.1f;
         public float lookLimitV = 89f;
 
+        [Header("Audio Settings")]
+        public AudioClip[] footsteps;
+        public AudioClip[] punches;
+
         private PlayerLocomotionInput _playerLocomotionInput;
         private PlayerState _playerState;
 
@@ -65,6 +70,7 @@ namespace FratRatRedemption.FinalCharacterController
         {
             _playerLocomotionInput = GetComponent<PlayerLocomotionInput>();
             _playerState = GetComponent<PlayerState>();
+            audioSource = GetComponent<AudioSource>();
         }
         #endregion
 
@@ -263,5 +269,21 @@ namespace FratRatRedemption.FinalCharacterController
             return lateralVelocity.magnitude > movingThreshold;
         }
         #endregion
+        
+        public void Footstep()
+        {
+            int random = Random.Range(0, footsteps.Length);
+            var clip = footsteps[random];
+            audioSource.PlayOneShot(clip);
+        }
+
+        public void PlayPunchSound()
+        {
+            if (punches.Length == 0 || audioSource == null) return;
+            int randomIndex = Random.Range(0, punches.Length);
+            AudioClip clip = punches[randomIndex];
+            audioSource.PlayOneShot(clip);
+        }
     }
+
 }
