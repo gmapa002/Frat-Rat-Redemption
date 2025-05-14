@@ -34218,9 +34218,9 @@ AnimationClip:
     m_LoopBlendPositionY: 1
     m_LoopBlendPositionXZ: 1
     m_KeepOriginalOrientation: 1
-    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionY: 0
     m_KeepOriginalPositionXZ: 1
-    m_HeightFromFeet: 0
+    m_HeightFromFeet: 1
     m_Mirror: 0
   m_EditorCurves:
   - serializedVersion: 2
@@ -67239,4 +67239,11 @@ AnimationClip:
     objectReferenceParameter: {fileID: 1882950411473034728, guid: 972d2d699f4b44243b7f79d4f1aa8464, type: 3}
     floatParameter: 0
     intParameter: 1
+    messageOptions: 0
+  - time: 2
+    functionName: CloseAttack2
+    data: 
+    objectReferenceParameter: {fileID: 1882950411473034728, guid: 972d2d699f4b44243b7f79d4f1aa8464, type: 3}
+    floatParameter: 0
+    intParameter: 0
     messageOptions: 0
